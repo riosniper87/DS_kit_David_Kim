@@ -40,22 +40,23 @@ def embedding(lst, data):
         encode_dict = {element: encoded_value for element, encoded_value in zip(unique_lst, encode)}
         dict_ls.append(encode_dict)
         lst_df = pd.DataFrame()
-    for i in embedding_list: 
-        lst_df[f'{i}'] = res[f'{i}'].map(encode_dict)
-    embedding_df = pd.concat([embedding_df,lst_df], axis=1)
+        for i in embedding_list: 
+            lst_df[f'{i}'] = res[f'{i}'].map(encode_dict)
+        embedding_df = pd.concat([embedding_df,lst_df], axis=1)
     
-    return embedding_df
+    return embedding_df, dict_ls
 
 def dummy(lst, data): 
 #     dict_ls = []
     dummy_df = pd.DataFrame()
     for dummy_list in lst:
-    merged_list = pd.concat([data[col] for col in dummy_list], ignore_index=True)
-    unique_lst = list(set(merged_list))
-    for dummy_list in lst:
-        dummy_cols = pd.get_dummies(data[dummy_list], prefix=dummy_list, drop_first=True)
-        dummy_df = pd.concat([dummy_df, dummy_cols], axis=1)
+        for i in lst:
+            dummy_cols = pd.get_dummies(data[i], prefix=i)
+            dummy_df = pd.concat([dummy_df, dummy_cols], axis=1)
     return dummy_df
-    
+
+print("you working?")
+print("you working?")
+print("for sure?")
 # def preprocess(data, Continuous, Character, Embedding, Dummy):
-    
+# let's push by function 
