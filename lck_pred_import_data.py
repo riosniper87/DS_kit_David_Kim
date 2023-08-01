@@ -57,6 +57,6 @@ def get_data(form):
     )
     data = pd.DataFrame(res)
     return data
-    
+print("aaaaa")
 # if __name__ == "__main__":
 #     main()
