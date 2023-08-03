@@ -58,5 +58,6 @@ def dummy(lst, data):
 print("you working?")
 print("you working?")
 print("for sure?")
+print("study session")
 # def preprocess(data, Continuous, Character, Embedding, Dummy):
 # let's push by function 
